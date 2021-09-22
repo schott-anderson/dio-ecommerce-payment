@@ -32,6 +32,7 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
     implementation 'org.springframework.cloud:spring-cloud-starter-sleuth'
     implementation 'org.springframework.cloud:spring-cloud-starter-stream-kafka'
+    implementation 'io.confluent:kafka-avro-serializer:5.5.0'
     compileOnly 'org.projectlombok:lombok'
     runtimeOnly 'org.postgresql:postgresql'
     annotationProcessor 'org.projectlombok:lombok'
@@ -49,4 +50,11 @@ dependencyManagement {
 
 test {
     useJUnitPlatform()
+}
+avro {
+    fieldVisibility = "PRIVATE"
+}
+
+generateAvroJava {
+    source 'src/main/resources/avro'
 }
