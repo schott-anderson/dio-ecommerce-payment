@@ -1,3 +1,6 @@
+server:
+  port: 8082
+
 spring:
   datasource:
     url: jdbc:postgresql://localhost:5433/payment
@@ -50,5 +53,3 @@ spring:
           url: http://localhost:8081
   application:
     name: checkout-api
-server:
-  port: 8085
